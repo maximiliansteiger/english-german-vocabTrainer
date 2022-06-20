@@ -1,0 +1,8 @@
+englishwords:
+    https://www.0ef.com/wwen/english-resources/english-vocabulary/top-3000-words/
+
+
+
+translation:
+    google spreadsheets
+    =GoogleTranslate(INDIREKT("A"&ZEILE()), "en", INDIREKT("Langs!"&"A"&SPALTE()-1))

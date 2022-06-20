@@ -1,0 +1,160 @@
+body {
+    background-color: #203749;
+
+}
+
+.pageContent {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.difficulty-button {
+    background-color: #4CAF50;
+    width: 20vw;
+    height: auto;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 3vh;
+    margin: 4vh 2vh;
+    cursor: pointer;
+
+    /* animation for de-hovering */
+    animation: deHovering 2s 1 forwards;
+
+}
+
+#easyB,#easy {
+    background-color: #4CAF50;
+}
+
+#mediumB,#medium {
+    background-color: #c3ce63;
+}
+
+#hardB,#hard {
+    background-color: #ca3a27;
+}
+
+
+.difficulty-button:hover {
+
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    animation: hoverDifficulty 1s 1 forwards;
+}
+
+@keyframes hoverDifficulty {
+    0% {
+        height: 20vh;
+    }
+
+    50% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 200vh;
+    }
+}
+
+@keyframes deHovering {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 20vh;
+    }
+}
+
+.current {
+    background-color: #f5f5f5;
+    padding: 2vh;
+    border-radius: 5px;
+    border: 1px solid rgb(3, 3, 3);
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+}
+
+#translationTry{
+    background-color: #f5f5f5;
+    padding: 2vh;
+    border-radius: 5px;
+    border: 1px solid rgb(3, 3, 3);
+    width: 30%;
+    height: 10vh;
+    text-align: center;
+    font-size: 3vh;
+}
+
+.content {
+    margin: auto;
+    width: 50%;
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+
+#start {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+#afterStart {
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+
+.after-difficulty-button, .nextPrev-button {
+    width: 15vw;
+    height: 15vh;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 3vh;
+    margin: 4vh 2vh;
+    cursor: pointer;
+}
+
+
+.nextPrev-button{
+    background-color: #203749;
+}
+
+#prev{
+    box-shadow: -1px 5px 20px 5px rgba(0,0,0,0.42);
+}
+#next{
+    box-shadow: 1px 5px 20px 5px rgba(0,0,0,0.42);
+}
+
+#prev:hover{
+    box-shadow: -1px 5px 20px 5px rgba(0, 0, 0, 0.7);
+}
+#next:hover{
+    box-shadow: 1px 5px 20px 5px rgba(0,0,0,0.7);
+}
+
+.after-difficulty-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type=text]{
+    /* width: 50%; */
+    height: 5vh;
+}

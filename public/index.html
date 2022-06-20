@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vocabs</title>
+    <script src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="pageContent">
+        <div id="start">
+            <input type="button" id="easyB" class="difficulty-button" value="easy">
+            <input type="button" id="mediumB" class="difficulty-button" value="medium">
+            <input type="button" id="hardB" class="difficulty-button" value="hard">
+        </div>
+        <div id="afterStart" style="display: none;">
+            <div class="content">
+                <div class="current">
+                    <h1 id="word"></h1>
+                </div>
+            </div>
+            <div class="buttonForVerifying">
+                <input type="text" value="" id="translationTry">
+            </div>
+            <input type="button" value="reset" id="resetButton">
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
