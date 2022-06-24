@@ -12,8 +12,18 @@
 
 <body>
 
+    <nav>
+        <ul>
+            <li><a href="./index.html">home</a></li>
+            <li><a href="./pages/stats.html">stats</a></li>
+            <li><a href="https://maximiliansteiger.github.io/" target="_blank">credit</a></li>
+            <li><a href="#" id="resetButton">reset</a></li>
+            <!-- <input type="button" value="reset" id="resetButton"> -->
+        </ul>
+    </nav>
     <div class="pageContent">
         <div id="start">
+            <h1>CHOOSE DIFFICULTY</h1>
             <input type="button" id="easyB" class="difficulty-button" value="easy">
             <input type="button" id="mediumB" class="difficulty-button" value="medium">
             <input type="button" id="hardB" class="difficulty-button" value="hard">
@@ -21,15 +31,12 @@
         <div id="afterStart" style="display: none;">
             <div class="content">
                 <div class="current">
-                    <h1 id="word"></h1>
+                    <h2 id="word"></h2>
                 </div>
             </div>
             <div class="buttonForVerifying">
                 <input type="text" value="" id="translationTry">
             </div>
-            <input type="button" value="reset" id="resetButton">
-
-
         </div>
     </div>
 

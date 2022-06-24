@@ -3,6 +3,12 @@ let diffButtons = document.querySelectorAll('.difficulty-button');
 let submitButton = document.querySelector('#submitButton');
 let startButtons = document.querySelector('#start');
 let resetButton = document.querySelector('#resetButton')
+
+//start Buttons
+let easyButton = document.querySelector("#easyB");
+let mediumButton = document.querySelector("#mediumB");
+let hardButton = document.querySelector("#hardB");
+
 //html elements 
 let word = document.querySelector('#word');
 let afterStartElements = document.querySelector('#afterStart');
@@ -13,6 +19,8 @@ let translatedWordsGerman = [];
 let jsonWordList = [];
 let difficulty = "";
 
+let streak = 0;
+
 start();
 
 //verify word
@@ -22,25 +30,54 @@ function verifyWord() {
     let currentWordObject = jsonWordList[currentWordPosition];
     let difficulty = +Object.values(jsonWordList[currentWordPosition])
     let change = false;
-
     if (inputText === translatedWordsGerman[currentWordPosition].toLowerCase()) {
+        streak++;
+        getStatsData().then(data => {
+            let stats = data;
+            console.log(stats);
+            if (difficulty == 0) {
+                stats.easy++;
+            }
+            if (difficulty == 1) {
+                stats.medium++;
+            }
+            if (difficulty == 2) {
+                stats.hard++;
+            }
+            if (streak > stats.streak) {
+                stats.streak = streak;
+            }
+            stats.correct++;
+            updateStatsData(stats);
+        });
         content.style.backgroundColor = "green";
         if (difficulty > 0) {
             change = true;
             currentWordObject[Object.keys(currentWordObject)] = difficulty - 1;
         }
     } else {
+        getStatsData().then(data => {
+            let stats = data;
+            stats.wrong++;
+            updateStatsData(stats);
+        });
         content.style.backgroundColor = "red";
         if (difficulty < 2) {
             change = true;
             currentWordObject[Object.keys(currentWordObject)] = difficulty + 1;
         }
+
+        if(currentWordObject[Object.keys(currentWordObject)] == 1){
+            window.location.href = "../index.html";
+        }
+
         submitField.value = translatedWordsGerman[currentWordPosition];
         submitField.style.color = "red";
     }
     submitField.disabled = true;
     setTimeout(() => {
         changeWordInHtml();
+        content.style.backgroundColor = "gray";
         submitField.style.color = "black";
         submitField.disabled = false;
         submitField.focus();
@@ -54,6 +91,24 @@ function verifyWord() {
 function updateJsonWordList() {
     getData().then(data => {
         jsonWordList = data;
+        easyButton.value = "easy \n" + wordsPerDifficulty("easy").length
+        mediumButton.value = "medium \n" + wordsPerDifficulty("medium").length
+        hardButton.value = "hard \n" + wordsPerDifficulty("hard").length
+
+        if (wordsPerDifficulty("easy").length == 0) {
+            document.querySelector("#easyB").disabled = true;
+            document.querySelector("#easyB").style.backgroundColor = "gray";
+        }
+
+        if (wordsPerDifficulty("medium").length == 0) {
+            document.querySelector("#mediumB").disabled = true;
+            document.querySelector("#mediumB").style.backgroundColor = "gray";
+        }
+
+        if (wordsPerDifficulty("hard").length == 0) {
+            document.querySelector("#hardB").disabled = true;
+            document.querySelector("#hardB").style.backgroundColor = "gray";
+        }
     });
 }
 
@@ -64,30 +119,30 @@ function start() {
     getDataGerman().then(data => {
         translatedWordsGerman = data;
     });
-    //start buttons
-    diffButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            difficulty = button.value;
-            changeWordInHtml();
-            changeDisplay(afterStartElements);
-            changeDisplay(startButtons);
-        });
-        //listen to "Enter" key
-        submitField.addEventListener('keypress', (event) => {
-            if (event.key === "Enter") {
-                verifyWord();
-            }
-        });
-    });
-    resetButton.addEventListener('click', () => {
-        Object.keys(jsonWordList).forEach(key => {
-            jsonWordList[key][Object.keys(jsonWordList[key])] = 2;
-        });
-        updateJsonWordList();
-        updateData(jsonWordList);
-    })
 }
 
+//start buttons
+diffButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        difficulty = button.value.split("\n")[0].trim();
+        changeWordInHtml();
+        changeDisplay(afterStartElements);
+        changeDisplay(startButtons);
+    });
+});
+//listen to "Enter" key
+submitField.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        verifyWord();
+    }
+});
+resetButton.addEventListener('click', () => {
+    Object.keys(jsonWordList).forEach(key => {
+        jsonWordList[key][Object.keys(jsonWordList[key])] = 2;
+    });
+    updateJsonWordList();
+    updateData(jsonWordList);
+})
 //change word in html
 function changeWordInHtml() {
     let words = jsonWordList.map(word => Object.keys(word)[0]);
@@ -99,6 +154,7 @@ function changeWordInHtml() {
         submitField.value = "";
         word.innerHTML = words[currentWordPosition];
         document.querySelector(".content").style.backgroundColor = "gray";
+        console.log(translatedWordsGerman[currentWordPosition]);
     }
 }
 
@@ -127,12 +183,25 @@ async function getData() {
     return await fetchRestEndpoint('/words', 'GET');
 }
 async function getDataGerman() {
-    return await fetchRestEndpoint('/german', 'GET');
+
+    let data = await fetchRestEndpoint('/german', 'GET');
+    console.log(data);
+    return data;
 }
 //update word in json file
 async function updateData(obj) {
     return await fetchRestEndpoint('/words', 'PUT', obj);
 }
+
+//stats
+async function getStatsData() {
+    return await fetchRestEndpoint('/stats', 'GET');
+}
+//update word in json file
+async function updateStatsData(obj) {
+    return await fetchRestEndpoint('/stats', 'PUT', obj);
+}
+
 
 function changeDisplay(element) {
     let display = element.style.display;

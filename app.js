@@ -4,6 +4,7 @@ var bodyParser = require('body-parser')
 // import router(s)
 const backendRouter = require('./routes/backend.js');
 const backendRouterGerman = require('./routes/backendGerman.js');
+const statsRouter = require('./routes/stats.js');
 
 // specify http server port
 const port = 3000;
@@ -17,6 +18,8 @@ app.use(express.json()); // parse JSON payload and place result in req.body
 // mount router(s)
 app.use('/words', backendRouter);
 app.use('/german', backendRouterGerman);
+app.use('/stats', statsRouter);
+
 
 // start http server
 app.listen(port, () => {

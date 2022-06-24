@@ -1,6 +1,56 @@
+html,
 body {
     background-color: #203749;
+}
 
+.centerContent {
+    position: absolute;
+    left: 20%;
+    background-color: white;
+
+}
+
+nav {
+    background-color: #203749;
+    border-bottom: 1px solid #203749;
+    border-top: 1px solid #203749;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #203749;
+}
+
+li {
+    float: left;
+    color: whitesmoke;
+    margin: 2vh;
+    cursor: pointer;
+
+}
+
+a:link,
+a:visited {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
 }
 
 .pageContent {
@@ -21,32 +71,40 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline;
-    font-size: 3vh;
+    font-size: 4vh;
     margin: 4vh 2vh;
     cursor: pointer;
-
+    padding: 7vh;
     /* animation for de-hovering */
-    animation: deHovering 2s 1 forwards;
-
+    /* animation: deHovering 2s 1 forwards; */
 }
 
-#easyB,#easy {
+.difficulty-button:disabled {
+    color: whitesmoke;
+    cursor: not-allowed;
+}
+
+
+
+#easyB,
+#easy {
     background-color: #4CAF50;
 }
 
-#mediumB,#medium {
+#mediumB,
+#medium {
     background-color: #c3ce63;
 }
 
-#hardB,#hard {
+#hardB,
+#hard {
     background-color: #ca3a27;
 }
 
 
 .difficulty-button:hover {
-
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    animation: hoverDifficulty 1s 1 forwards;
+    /* animation: hoverDifficulty 1s 1 forwards; */
 }
 
 @keyframes hoverDifficulty {
@@ -83,7 +141,7 @@ body {
     text-align: center;
 }
 
-#translationTry{
+#translationTry {
     background-color: #f5f5f5;
     padding: 2vh;
     border-radius: 5px;
@@ -97,7 +155,7 @@ body {
 .content {
     margin: auto;
     width: 50%;
-    background-color: green;
+    background-color: gray;
     padding: 10px;
     text-align: center;
     align-items: center;
@@ -117,7 +175,8 @@ body {
     align-items: center;
 }
 
-.after-difficulty-button, .nextPrev-button {
+.after-difficulty-button,
+.nextPrev-button {
     width: 15vw;
     height: 15vh;
     /* Green */
@@ -132,29 +191,31 @@ body {
 }
 
 
-.nextPrev-button{
+.nextPrev-button {
     background-color: #203749;
 }
 
-#prev{
-    box-shadow: -1px 5px 20px 5px rgba(0,0,0,0.42);
-}
-#next{
-    box-shadow: 1px 5px 20px 5px rgba(0,0,0,0.42);
+#prev {
+    box-shadow: -1px 5px 20px 5px rgba(0, 0, 0, 0.42);
 }
 
-#prev:hover{
+#next {
+    box-shadow: 1px 5px 20px 5px rgba(0, 0, 0, 0.42);
+}
+
+#prev:hover {
     box-shadow: -1px 5px 20px 5px rgba(0, 0, 0, 0.7);
 }
-#next:hover{
-    box-shadow: 1px 5px 20px 5px rgba(0,0,0,0.7);
+
+#next:hover {
+    box-shadow: 1px 5px 20px 5px rgba(0, 0, 0, 0.7);
 }
 
-.after-difficulty-button:hover{
+.after-difficulty-button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-input[type=text]{
+input[type=text] {
     /* width: 50%; */
     height: 5vh;
 }
