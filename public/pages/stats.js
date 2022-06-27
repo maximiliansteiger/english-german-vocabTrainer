@@ -4,6 +4,8 @@ google.charts.load('current', {
 
 google.charts.setOnLoadCallback(drawChartDifficulty);
 google.charts.setOnLoadCallback(drawChartCorrectness);
+longesStreak();
+totalGuesses();
 
 function drawChartCorrectness() {
     let statsData = getStatsData();
@@ -15,20 +17,17 @@ function drawChartCorrectness() {
             ['correct', jsonDataWareHouse.correct, 'green'],
             ['wrong', jsonDataWareHouse.wrong, 'red']
         ]);
-
         // Set chart options
         let options = {
             'title': 'distribution of correctly spelled words',
             'width': 1200,
             'height': 800
         };
-
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('drawChartDifficulty'));
         chart.draw(data, options);
     });
 }
-
 
 function drawChartDifficulty() {
     let statsData = getStatsData();
@@ -52,6 +51,20 @@ function drawChartDifficulty() {
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('drawChartCorrectness'));
         chart.draw(data, options);
+    });
+}
+
+function longesStreak() {
+    let statsData = getStatsData();
+    statsData.then(jsonDataWareHouse => {
+        document.querySelector("#highestStreak").innerHTML = "Highest streak: " + jsonDataWareHouse.streak;
+    });
+}
+
+function totalGuesses() {
+    let statsData = getStatsData();
+    statsData.then(jsonDataWareHouse => {
+        document.querySelector("#totalGuesses").innerHTML = "Total guesses: " + (jsonDataWareHouse.correct + jsonDataWareHouse.wrong);
     });
 }
 

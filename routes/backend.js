@@ -19,8 +19,6 @@ router.get('/', (req, res) => {
 });
 
 router.put('/',function (req, res) {
-    // console.log(JSON.stringify(req.body));
-
     fs.writeFile('./routes/words.json', JSON.stringify(req.body), (err) => {
         if (err) {
             res.status(400).json({
@@ -32,7 +30,6 @@ router.put('/',function (req, res) {
             });
         }
     });
-    console.log("done");
     res.status(204)
 })
 

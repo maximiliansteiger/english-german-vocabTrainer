@@ -34,7 +34,6 @@ function verifyWord() {
         streak++;
         getStatsData().then(data => {
             let stats = data;
-            console.log(stats);
             if (difficulty == 0) {
                 stats.easy++;
             }
@@ -66,9 +65,9 @@ function verifyWord() {
             change = true;
             currentWordObject[Object.keys(currentWordObject)] = difficulty + 1;
         }
-
+        //if difficulty was empty after guessed wrong
         if(currentWordObject[Object.keys(currentWordObject)] == 1){
-            window.location.href = "../index.html";
+            window.location = "../index.html";
         }
 
         submitField.value = translatedWordsGerman[currentWordPosition];
@@ -142,6 +141,7 @@ resetButton.addEventListener('click', () => {
     });
     updateJsonWordList();
     updateData(jsonWordList);
+    window.location = "../index.html";
 })
 //change word in html
 function changeWordInHtml() {
@@ -154,7 +154,6 @@ function changeWordInHtml() {
         submitField.value = "";
         word.innerHTML = words[currentWordPosition];
         document.querySelector(".content").style.backgroundColor = "gray";
-        console.log(translatedWordsGerman[currentWordPosition]);
     }
 }
 
@@ -183,10 +182,7 @@ async function getData() {
     return await fetchRestEndpoint('/words', 'GET');
 }
 async function getDataGerman() {
-
-    let data = await fetchRestEndpoint('/german', 'GET');
-    console.log(data);
-    return data;
+    return await fetchRestEndpoint('/german', 'GET');
 }
 //update word in json file
 async function updateData(obj) {
@@ -201,7 +197,6 @@ async function getStatsData() {
 async function updateStatsData(obj) {
     return await fetchRestEndpoint('/stats', 'PUT', obj);
 }
-
 
 function changeDisplay(element) {
     let display = element.style.display;
