@@ -30,7 +30,7 @@ function verifyWord() {
     let currentWordObject = jsonWordList[currentWordPosition];
     let difficulty = +Object.values(jsonWordList[currentWordPosition])
     let change = false;
-    if (inputText === translatedWordsGerman[currentWordPosition].toLowerCase()) {
+    if (translatedWordsGerman[currentWordPosition].split(",").map(word => word.toLowerCase()).includes(inputText)) {
         streak++;
         getStatsData().then(data => {
             let stats = data;
@@ -55,6 +55,7 @@ function verifyWord() {
             currentWordObject[Object.keys(currentWordObject)] = difficulty - 1;
         }
     } else {
+        streak = 0;
         getStatsData().then(data => {
             let stats = data;
             stats.wrong++;
@@ -69,7 +70,6 @@ function verifyWord() {
         if(currentWordObject[Object.keys(currentWordObject)] == 1){
             window.location = "../index.html";
         }
-
         submitField.value = translatedWordsGerman[currentWordPosition];
         submitField.style.color = "red";
     }

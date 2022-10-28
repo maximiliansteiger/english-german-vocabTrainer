@@ -17,11 +17,18 @@ function drawChartCorrectness() {
             ['correct', jsonDataWareHouse.correct, 'green'],
             ['wrong', jsonDataWareHouse.wrong, 'red']
         ]);
+
+        let largerNumber = Math.max(jsonDataWareHouse.correct, jsonDataWareHouse.wrong);
+
         // Set chart options
         let options = {
             'title': 'distribution of correctly spelled words',
-            'width': 1200,
-            'height': 800
+            'width': 800,
+            'height': 533,
+            vAxis: {
+                scaleType: 'mirrorLog',
+                ticks: [0,Math.round(largerNumber/4), Math.round(largerNumber/2), largerNumber, Math.round(largerNumber*1.5)]
+            }
         };
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('drawChartDifficulty'));
@@ -44,8 +51,8 @@ function drawChartDifficulty() {
         // Set chart options
         let options = {
             'title': 'distribution of correctly spelled words',
-            'width': 1200,
-            'height': 800
+            'width': 800,
+            'height': 533
         };
 
         // Instantiate and draw our chart, passing in some options.
@@ -55,16 +62,14 @@ function drawChartDifficulty() {
 }
 
 function longesStreak() {
-    let statsData = getStatsData();
-    statsData.then(jsonDataWareHouse => {
-        document.querySelector("#highestStreak").innerHTML = "Highest streak: " + jsonDataWareHouse.streak;
+    getStatsData().then(jsonDataWareHouse => {
+        document.querySelector("#highestStreak").innerHTML = jsonDataWareHouse.streak;
     });
 }
 
 function totalGuesses() {
-    let statsData = getStatsData();
-    statsData.then(jsonDataWareHouse => {
-        document.querySelector("#totalGuesses").innerHTML = "Total guesses: " + (jsonDataWareHouse.correct + jsonDataWareHouse.wrong);
+    getStatsData().then(jsonDataWareHouse => {
+        document.querySelector("#totalGuesses").innerHTML = (jsonDataWareHouse.correct + jsonDataWareHouse.wrong);
     });
 }
 

@@ -8,7 +8,7 @@
     <title>Stats</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./stats.js" defer></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./stats.css">
 </head>
 
 <body>
@@ -23,8 +23,14 @@
     <div class="centerContent">
         <div id="drawChartDifficulty"></div>
         <div id="drawChartCorrectness"></div>
-        <div><h2 id="highestStreak">Highest streak:0</h2></div>
-        <div><h2 id="totalGuesses">total guesses:0</h2></div>
+        <div class="dataDiv">
+            <h2 id="highestStreak">0</h2>
+            <h2>Highest streak</h2>
+        </div>
+        <div class="dataDiv">
+            <h2 id="totalGuesses">0</h2>
+            <h2>total guesses</h2>
+        </div>
     </div>
 
 </body>

@@ -11,7 +11,7 @@ unbedingt
 absorbieren
 Missbrauch
 akademisch
-annehmen
+annehmen,akzeptieren
 Zugang
 Unfall
 begleiten
@@ -38,7 +38,7 @@ eigentlich
 Anzeige
 sich anpassen
 hinzufügen
-Zusatz
+Zusatz,Addition
 zusätzlich
 die Anschrift
 angemessen
@@ -154,7 +154,7 @@ genehmigen
 etwa
 Araber
 Architekt
-Bereich
+Bereich,Fläche
 streiten
 Streit
 entstehen
@@ -212,14 +212,14 @@ Behörde
 Auto
 verfügbar
 Durchschnitt
-vermeiden
+vermeiden,meiden
 vergeben
 bewusst
 Bewusstsein
 ein Weg
 furchtbar
 Baby
-der Rücken
+Rücken,zurück,nach hinten,Rückseite,Hintergrund
 Hintergrund
 Schlecht
 schlecht
@@ -415,7 +415,7 @@ sicher
 sicherlich
 Kette
 Stuhl
-Vorsitzende
+Vorsitzende,Vorsitzender
 Herausforderung
 Kammer
 Champion
@@ -433,7 +433,7 @@ Wohltätigkeit
 Diagramm
 Verfolgungsjagd
 billig
-überprüfen
+überprüfen,
 Wange
 Käse
 Koch
@@ -567,7 +567,7 @@ beträchtlich
 Rücksichtnahme
 bestehen
 konsistent
-Konstante
+Konstante,konstant
 ständig
 bilden
 konstitutionell
@@ -766,7 +766,7 @@ Richtung
 direkt
 Direktor
 Schmutz
-schmutzig
+schmutzig,dreckig
 Behinderung
 nicht zustimmen
 verschwinden
@@ -792,7 +792,7 @@ unterscheiden
 verteilen
 Verteilung
 Bezirk
-vielfältig
+vielfältig,divers
 Diversität
 teilen
 Aufteilung
@@ -1042,7 +1042,7 @@ weniger
 Faser
 Fiktion
 aufstellen
-fünfzehn
+fünfzehn,15
 fünfte
 fünfzig
 Kampf
@@ -1064,7 +1064,7 @@ Fertig
 Feuer
 Feste
 Erste
-Fische
+Fische,Fisch
 Angeln
 fit
 Fitness
@@ -1090,7 +1090,7 @@ Lebensmittel
 Fuß
 Fußball
 zum
-Macht
+Macht,Gewalt
 ausländisch
 Wald
 bis in alle Ewigkeit
@@ -1166,9 +1166,9 @@ Deutsch
 Geste
 erhalten
 Geist
-Riese
+Riese,Gigantisch
 Geschenk
-begabtes
+begabt
 Mädchen
 feste Freundin
 geben
@@ -1205,7 +1205,7 @@ grün
 Lebensmittelgeschäft
 Boden
 Gruppe
-größer werden
+größer werden,wachsen
 wachsend
 Wachstum
 Garantie
@@ -1302,7 +1302,7 @@ jedoch
 riesig
 Mensch
 Humor
-hundert
+hundert,einhundert,100
 hungrig
 Jäger
 Jagd
@@ -1419,7 +1419,7 @@ Ermittlung
 Ermittler
 Investition
 Investor
-einladen
+einladen, Einladung
 einbeziehen
 beteiligt
 Beteiligung
@@ -1593,8 +1593,8 @@ männlich
 Einkaufszentrum
 Mann
 verwalten
-Management
-Manager
+Management,Geschäftsführung
+Manager,Geschäftsführer
 Benehmen
 Hersteller
 Herstellung
@@ -1622,14 +1622,14 @@ mich
 Mahlzeit
 bedeuten
 Bedeutung
-inzwischen
+inzwischen, in der Zwischenzeit
 messen
 Messung
 Fleisch
 Mechanismus
 Medien
 medizinisch
-Medikation
+Medikation,Arzneimittel
 Medizin
 Mittel
 Treffen
@@ -1747,7 +1747,7 @@ noch nie
 Dennoch
 Neu
 neu
-Nachrichten
+Nachrichten,Neuigkeiten
 Zeitung
 nächste
 Hübsch
@@ -1883,7 +1883,7 @@ Park
 Parken
 Teil
 Teilnehmer
-sich beteiligen
+sich beteiligen, teilnehmen
 Beteiligung
 besondere
 im Speziellen
@@ -1917,7 +1917,7 @@ Wahrnehmung
 perfekt
 perfekt
 ausführen
-Leistung
+Leistung,Errungenschaft
 vielleicht
 Zeitraum
 dauerhaft
@@ -1950,7 +1950,7 @@ Stück
 Haufen
 Pilot
 Kiefer
-rosa
+rosa,pink
 Rohr
 Tonhöhe
 Platz
@@ -1977,7 +1977,7 @@ Poesie
 Punkt
 Pole
 Polizei
-Politik
+Politik,Regel
 politisch
 politisch
 Politiker
@@ -2050,7 +2050,7 @@ drucken
 frühere
 Priorität
 Gefängnis
-Häftling
+Häftling,Gefangener
 Privatsphäre
 Privatgelände
 wahrscheinlich
@@ -2083,7 +2083,7 @@ Vorschlag
 vorschlagen
 vorgeschlagen
 Staatsanwalt
-Aussicht
+Aussicht,sehen,ansehen,Blick,Sicht
 beschützen
 Schutz
 Protein
@@ -2202,7 +2202,7 @@ Hilfe
 Religion
 religiös
 vertrauen
-bleiben übrig
+bleiben übrig,verbleibend
 verblieben
 bemerkenswert
 denken Sie daran
@@ -2248,7 +2248,7 @@ Ergebnis
 zuückbehalten
 ausscheiden
 Ruhestand
-Rückkehr
+Rückkehr,zurückgeben
 aufdecken
 Einnahmen
 Rezension
@@ -2430,7 +2430,7 @@ Waschbecken
 Herr
 Schwester
 mach Sitz
-Seite? ˅
+Seite
 Lage
 sechs
 Größe
@@ -2477,7 +2477,7 @@ manchmal
 etwas
 irgendwo
 Sohn
-Lied
+Lied,Song
 demnächst
 anspruchsvoll
 Verzeihung
@@ -2793,7 +2793,7 @@ Tunnel
 drehen
 Fernseher
 zwölf
-zwanzig
+zwanzig,20
 zweimal
 Zwilling
 zwei
@@ -2809,9 +2809,9 @@ unter
 unterziehen
 verstehe
 Verständnis
-Unglücklicherweise
+Unglücklicherweise,leider
 Uniform
-Union
+Union,Vereinigung,Verein
 einzigartig
 Einheit
 Vereinigt
@@ -2974,7 +2974,7 @@ Welt
 besorgt
 Sorge
 Wert
-möchten
+möchten,würde
 Wunde
 wickeln
 schreiben
